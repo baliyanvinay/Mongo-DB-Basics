@@ -49,5 +49,7 @@ Note: MongoDB provides a free Atlas cluster with 3 server replica set with 512MB
 - db.collection.deteleone({"_id": 12}) # use id to delete to make sure only one document is removed
 - db.collection.find({"age": {"$gte": 18} }) # get all documents where age is greater than or equals to 18
 - db.collection.find({"tripduration": {"$lte": 70},"usertype": "Customer" })
+- db.collection.find({"$and": [{"age": 12}, {"name": "John"}] })
+- db.collection.find({"$not": {"name": "John"}}) # where name is not John
 
 MongoDB Playground: https://mongoplayground.net/
