@@ -72,5 +72,17 @@ db.companies.find(
 	{"$or": [{"category_code": "web"}, {"category_code": "social"}]}
     ]
 }).count()
+
+# Where trip started and ended at same stattion and duration of trip is more than 1200 seconds
+db.trips.find(
+{"$expr": 
+    {"$and": 
+        [
+         {"$gt": ["$tripduration", 1200]},
+         {"$eq": ["$end station id", "$start station id"]}
+        ]
+    }
+}
+).count()
 ```
 MongoDB Playground: https://mongoplayground.net/
