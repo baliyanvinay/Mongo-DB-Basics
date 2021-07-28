@@ -32,4 +32,9 @@ Note: MongoDB provides a free Atlas cluster with 3 server replica set with 512MB
 - mongorestore: mongorestore --uri "<Atlas_Cluster_URI>" --drop <BSON_dump>
 - mongodump: mongodump --uri "<Atlas_Cluster_URI>"
 
+## What is the primary key in a document?
+- "_id" is an unique identifier for a document in a collection.
+- "_id" required in every MongoDB document
+- ObjectId() is the default value for the "_id" field unless otherwise specified
+
 MongoDB Playground: https://mongoplayground.net/
