@@ -42,7 +42,10 @@ Note: MongoDB provides a free Atlas cluster with 3 server replica set with 512MB
 - db.collection.insert({}) # insert a document
 - db.collection.insert([ { "test": 1 }, { "test": 2 }, { "test": 3 } ]) # insert 3 documents
 - db.collection.insert([{ "_id": 1, "test": 1 },{ "_id": 1, "test": 2 },{ "_id": 3, "test": 3 }],{ "ordered": false }) # to insert not in ordered fashion
-
-
+- db.collection.updateMany({ "city": "HUDSON" }, { "$inc": { "pop": 10 } }) # increment pop by 10 for all cities named HUDSON
+- db.collection.updateOne({ "zip": "12534" }, { "$set": { "population": 17630 } })
+- db.collection.drop() # drop a collection
+- db.collection.deletemany({"city":"ALABAMA"}) # delete all documents where city is ALABAMA
+- db.collection.deteleone({"_id": 12}) # use id to delete to make sure only one document is removed
 
 MongoDB Playground: https://mongoplayground.net/
