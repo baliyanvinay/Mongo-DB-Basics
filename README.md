@@ -54,7 +54,7 @@ Note: MongoDB provides a free Atlas cluster with 3 server replica set with 512MB
 
 
 ## Sample Queries
-```mql
+```json
 db.companies.find(
 {"$or": 
     [
@@ -73,7 +73,7 @@ db.companies.find(
     ]
 }).count()
 ```
-```mql
+```json
 # Where trip started and ended at same stattion and duration of trip is more than 1200 seconds
 db.trips.find(
 {"$expr": 
