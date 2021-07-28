@@ -52,4 +52,25 @@ Note: MongoDB provides a free Atlas cluster with 3 server replica set with 512MB
 - db.collection.find({"$and": [{"age": 12}, {"name": "John"}] })
 - db.collection.find({"$not": {"name": "John"}}) # where name is not John
 
+
+## Sample Queries
+```mql
+db.companies.find(
+{"$or": 
+    [
+	{"$and": [{"founded_year": 2004}, {"$or": [{"category_code": "web"}, {"category_code": "social"}] }]},
+	{"$and": [{"founded_month": 10}, {"$or": [{"category_code": "web"}, {"category_code": "social"}] }]}	
+    ]
+}
+).count()
+
+# Different implementation same result
+db.companies.find(
+{"$and": 
+    [
+	{"$or": [{"founded_month": 2}, {"founded_year": 2004}]}, 
+	{"$or": [{"category_code": "web"}, {"category_code": "social"}]}
+    ]
+}).count()
+```
 MongoDB Playground: https://mongoplayground.net/
