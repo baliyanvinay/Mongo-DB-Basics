@@ -47,5 +47,7 @@ Note: MongoDB provides a free Atlas cluster with 3 server replica set with 512MB
 - db.collection.drop() # drop a collection
 - db.collection.deletemany({"city":"ALABAMA"}) # delete all documents where city is ALABAMA
 - db.collection.deteleone({"_id": 12}) # use id to delete to make sure only one document is removed
+- db.collection.find({"age": {"$gte": 18} }) # get all documents where age is greater than or equals to 18
+- db.collection.find({"tripduration": {"$lte": 70},"usertype": "Customer" })
 
 MongoDB Playground: https://mongoplayground.net/
