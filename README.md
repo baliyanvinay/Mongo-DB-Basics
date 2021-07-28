@@ -20,6 +20,7 @@ Replica Set - a few connected machines that store the same data to ensure that i
 Instance - a single machine locally or in the cloud, running a certain software, in our case it is the MongoDB database. <br>
 
 ## What is MongoDB Atlas?
-Atlas is a database as a service offered by MongoDB which provides cloud database storage solution.
+Atlas is a database as a service offered by MongoDB which provides cloud database storage solution.<br>
+Note: MongoDB provides a free Atlas cluster with 3 server replica set with 512MB of storage that never expire.
 
 MongoDB Playground: https://mongoplayground.net/
