@@ -121,4 +121,8 @@ db.listingsAndReviews.find(
     {"reviews" : {"$size": 50}, "accommodates": {"$gt": 6}}
 ).pretty()
 ```
+```json
+# Where Offices are located in Seattle City | Offices field is an array
+db.companies.find({"offices": {"$elemMatch":{"city": "Seattle"}}}).count()
+```
 MongoDB Playground: https://mongoplayground.net/
