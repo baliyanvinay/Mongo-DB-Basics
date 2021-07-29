@@ -51,7 +51,8 @@ Note: MongoDB provides a free Atlas cluster with 3 server replica set with 512MB
 - db.collection.find({"tripduration": {"$lte": 70},"usertype": "Customer" })
 - db.collection.find({"$and": [{"age": 12}, {"name": "John"}] })
 - db.collection.find({"$not": {"name": "John"}}) # where name is not John
-
+- db.collection.find({<array_field>: {"$size": <size_of_array>}}) # all documents where with exactly the given length.
+- db.collection.find({<array_field>: {"$all": <array_in_square_brackets>}}) # all documents where array field contains all elements mentioned 
 
 ## Sample Queries
 ```json
