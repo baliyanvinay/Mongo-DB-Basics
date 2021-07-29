@@ -46,6 +46,23 @@ Projection is expilicit mongo query to control the fields returned by the find()
 db.collection.find({<filter_query>}, {<projection_query>})
 ```
 
+## What is Aggregation Framework?
+```json
+# MQL Query 
+db.listingsAndReviews.find(
+    {"amenities": "Wifi"},
+    {"price": 1, "address": 1, "_id": 0}
+).pretty()
+
+# Aggregagation Query
+db.listingsAndReviews.aggregate(
+    [
+	{ "$match": { "amenities": "Wifi" } },
+	{ "$project": { "price": 1, "address": 1, "_id": 0 }}
+    ]
+).pretty()
+```
+
 ## Useful MongoDB MSQL queries
 - db.collection.findOne() # get a random document
 - db.collection.insert({}) # insert a document
