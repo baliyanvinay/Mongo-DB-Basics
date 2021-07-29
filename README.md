@@ -91,4 +91,17 @@ db.trips.find(
 # where twitter_username is same as permalink for a document
 db.companies.find({"$expr": {"$eq": ["$twitter_username", "$permalink"]}}).count()
 ```
+```json
+db.listingsAndReviews.find(
+    { "amenities": 
+	{
+	    "$size": 20,
+	    "$all": [ "Internet", "Wifi", "Kitchen",
+                      "Washer", "Dryer", "Essentials",
+                      "Hangers", "Hair dryer", "Iron"
+                    ]
+	}
+    }
+).pretty()
+```
 MongoDB Playground: https://mongoplayground.net/
