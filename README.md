@@ -37,6 +37,15 @@ Note: MongoDB provides a free Atlas cluster with 3 server replica set with 512MB
 - "_id" required in every MongoDB document
 - ObjectId() is the default value for the "_id" field unless otherwise specified
 
+## Explain Projection in MQL
+Projection is expilicit mongo query to control the fields returned by the find() query.
+0s and 1s can't be fixed in a single projection except when you want to exclude the "_id" field.
+```json
+# Syntax of projection
+# 1 - include the field | 0 - exclude the field
+db.collection.find({<filter_query>}, {<projection_query>})
+```
+
 ## Useful MongoDB MSQL queries
 - db.collection.findOne() # get a random document
 - db.collection.insert({}) # insert a document
@@ -53,6 +62,7 @@ Note: MongoDB provides a free Atlas cluster with 3 server replica set with 512MB
 - db.collection.find({"$not": {"name": "John"}}) # where name is not John
 - db.collection.find({<array_field>: {"$size": <size_of_array>}}) # all documents where with exactly the given length.
 - db.collection.find({<array_field>: {"$all": <array_in_square_brackets>}}) # all documents where array field contains all elements mentioned 
+- db.collection.find({<array_field>: {"$elemMatch": {<field_in_array>: <value_to_match>} }}) # when to check elements of an array field
 
 ## Sample Queries
 ```json
