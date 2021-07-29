@@ -47,6 +47,7 @@ db.collection.find({<filter_query>}, {<projection_query>})
 ```
 
 ## What is Aggregation Framework?
+Aggregation in MongoDB works as a pipeline in which the order is important. Aggregation pipeline has stages where the result of stage 01 for say, is consumed in stage 02 for further calculations. Its follows a top to bottom execution approach while filtering/aggregating data. 
 ```json
 # MQL Query 
 db.listingsAndReviews.find(
@@ -61,6 +62,21 @@ db.listingsAndReviews.aggregate(
 	{ "$project": { "price": 1, "address": 1, "_id": 0 }}
     ]
 ).pretty()
+```
+For example, $group stage utilize the data from previous stage and group it as per given parameters.
+```json
+# Syntax
+{"$group":{
+	_id: <group_by_expression>,
+	"<field_1>": {"<accumulator_1>": <"expression_1">}
+    } 
+}
+# Example
+{"$group":{
+	_id: "$address.country",
+	"count_of_listings": {"$sum": 1}
+    } 
+}
 ```
 
 ## Useful MongoDB MSQL queries
