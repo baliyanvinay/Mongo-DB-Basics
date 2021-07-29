@@ -92,6 +92,7 @@ db.trips.find(
 db.companies.find({"$expr": {"$eq": ["$twitter_username", "$permalink"]}}).count()
 ```
 ```json
+# All Properties where amenities contains 20 items and does include atleast all the elements listed below
 db.listingsAndReviews.find(
     { "amenities": 
 	{
@@ -102,6 +103,12 @@ db.listingsAndReviews.find(
                     ]
 	}
     }
+).pretty()
+```
+```json
+# Review size is exactly 50 and acoomadates more than 6 people
+db.listingsAndReviews.find(
+    {"reviews" : {"$size": 50}, "accommodates": {"$gt": 6}}
 ).pretty()
 ```
 MongoDB Playground: https://mongoplayground.net/
