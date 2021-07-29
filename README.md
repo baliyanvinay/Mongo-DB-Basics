@@ -125,4 +125,9 @@ db.listingsAndReviews.find(
 # Where Offices are located in Seattle City | Offices field is an array
 db.companies.find({"offices": {"$elemMatch":{"city": "Seattle"}}}).count()
 ```
+```json
+# Access sub-documents within a document
+db.collection.find({"office.location_type": "SEZ Area"})
+db.collection.find({"office.0.contact_person.last_name": "Jackson"})
+```
 MongoDB Playground: https://mongoplayground.net/
