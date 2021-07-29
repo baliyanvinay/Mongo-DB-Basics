@@ -88,6 +88,15 @@ db.collection.find().sort({"pop": 1}).limit(1)
 db.collection.find().sort({"pop": -1}).limit(1)
 ```
 
+## Explain Indexes
+Index in MongoDB is similar to index of a box. In a database, special data structure that stores a small portion of collection's data set in an easy to traverse form. Make queries even more effiecient. 
+For example, if you query more on a field, consider adding indexing on that field.
+```json
+db.collection.createIndex({"birth_year": 1})
+db.collection.find({"birth_year": 1989}) 
+# traversed documents will be just 1 in place of all documents
+```
+
 ## Useful MongoDB MSQL queries
 - db.collection.findOne() # get a random document
 - db.collection.insert({}) # insert a document
