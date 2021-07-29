@@ -172,4 +172,8 @@ db.companies.find({"offices": {"$elemMatch":{"city": "Seattle"}}}).count()
 db.collection.find({"office.location_type": "SEZ Area"})
 db.collection.find({"office.0.contact_person.last_name": "Jackson"})
 ```
+```json
+# Youngest person | calculated on birth year
+db.collection.find({"birth year": {"$ne": ""}}, {"birth year": 1, "_id": 0}).sort({"birth year": -1}).limit(1)
+```
 MongoDB Playground: https://mongoplayground.net/
