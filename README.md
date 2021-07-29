@@ -67,8 +67,8 @@ For example, $group stage utilize the data from previous stage and group it as p
 ```json
 # Syntax
 {"$group":{
-	_id: <group_by_expression>,
-	"<field_1>": {"<accumulator_1>": <"expression_1">}
+	_id: <"group_by_expression">,
+	"<field_1>": {"<accumulator_1>": "<expression_1>"}
     } 
 }
 # Example
@@ -77,6 +77,15 @@ For example, $group stage utilize the data from previous stage and group it as p
 	"count_of_listings": {"$sum": 1}
     } 
 }
+```
+
+## Sort() and Limit() methods
+sort() and limit()
+Sort and limit are cursor methods like pretty and count. A cursor method is not applied to the database it is instead applied to resultant dataset. 
+```json
+# 1: asc sort | -1: desc sort
+db.collection.find().sort({"pop": 1}).limit(1)
+db.collection.find().sort({"pop": -1}).limit(1)
 ```
 
 ## Useful MongoDB MSQL queries
