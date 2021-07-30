@@ -20,3 +20,10 @@ use admin
 db.shutdownServer()
 exit
 ```
+
+## mongod Options
+- mongod --dbpath <directory path> # change the default path to given one
+- mongod --port <port number> # default is 27017
+- mongod --auth # to enable authentication
+- mongod --bind_ip 123.123.123.123 # allow clients on IP address 123.123.123.123 to access database
+- mongod --bind_ip localhost,123.123.123.123 # for multiple clients
