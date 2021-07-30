@@ -98,6 +98,7 @@ db.collection.find({"birth_year": 1989})
 ```
 
 ## Useful MongoDB MSQL queries
+- db.createCollection("<collection_name>")
 - db.collection.findOne() # get a random document
 - db.collection.insert({}) # insert a document
 - db.collection.insert([ { "test": 1 }, { "test": 2 }, { "test": 3 } ]) # insert 3 documents
