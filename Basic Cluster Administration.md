@@ -20,6 +20,8 @@ use admin
 db.shutdownServer()
 exit
 ```
+## mongod Configuration YML file
+Ref: [Mapping between mongod command line option and configuration file](https://docs.mongodb.com/manual/reference/configuration-file-settings-command-line-options-mapping/)
 
 ## mongod Options
 - mongod --dbpath <directory path> # change the default path to given one
