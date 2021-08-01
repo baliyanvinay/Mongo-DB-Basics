@@ -67,5 +67,8 @@ db.createUser({
   pwd: "root123",
   roles : [ "root" ]
 })
-
+```
+Run the below command from mongo shell to authenticate 
+```
+mongo --username root --password root123 --authenticationDatabase admin
 ```
