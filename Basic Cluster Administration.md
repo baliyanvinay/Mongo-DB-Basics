@@ -56,3 +56,6 @@ db.setProfilingLevel(1)
 - X.509 (Community Version)
 - LDAP(Lightweight Directory Access Protocol) (Enterprise only)
 - KERBEROS (Enterprise only)
+
+<b>Authorization Mechanisms</b>
+- Role Based Access Control, role based based access
