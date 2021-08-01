@@ -186,4 +186,8 @@ db.collection.find({"office.0.contact_person.last_name": "Jackson"})
 # Youngest person | calculated on birth year
 db.collection.find({"birth year": {"$ne": ""}}, {"birth year": 1, "_id": 0}).sort({"birth year": -1}).limit(1)
 ```
+```
+# Importing into a db from json
+mongoimport --port 27000 --db applicationData --collection products --authenticationDatabase admin --username application-user --password application-pass --drop --file /dataset/products.json
+```
 MongoDB Playground: https://mongoplayground.net/
