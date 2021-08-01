@@ -52,10 +52,10 @@ db.setProfilingLevel(1)
   
 ## Basic Security
 <b>Authentication Mechanisms</b>
-- SCRAM (Default)
-- X.509 (Community Version)
-- LDAP(Lightweight Directory Access Protocol) (Enterprise only)
-- KERBEROS (Enterprise only)
+1. SCRAM (Default)
+2. X.509 (Community Version)
+3. LDAP(Lightweight Directory Access Protocol) (Enterprise only)
+4. KERBEROS (Enterprise only)
 
 <b>Authorization Mechanisms</b>
 - Role Based Access Control, role based based access
@@ -72,3 +72,37 @@ Run the below command from mongo shell to authenticate
 ```
 mongo --username root --password root123 --authenticationDatabase admin
 ```
+
+## Role Based Access Control System
+1. <b>Custom Roles</b><br>
+2. <b>Built-in Roles</b>
+
+### Built-in Roles 
+1. Database User :- read | readWrite
+2. Database Administration :- dbAdmin, userAdmin, dbOwner
+3. Cluster Adminstration :- clusterAdmin, clusterManager, clusterMonitor, hostManager
+4. Backup/Restore
+5. Super User :- root
+Note: All roles applied on database level
+
+## userAdmin, dbAdmin & dbOwner
+<b>userAdmin Role</b>:- This role allows user to do all operations around managing a user.
+- changeCustomData 
+- changePassword
+- createRole
+- grantRole
+- viewRole
+- revokeRole
+- dropRole
+- createUser
+- dropUser
+- viewUser
+
+<b>dbAdmin</b>
+- collStats
+- dbHash
+- killCursors
+- listIndexes
+- listCollections
+  
+<b>dbOwner</b>:- The database owner can perform any administrative action on the database. This role combines the privileges granted by the readWrite, dbAdmin and userAdmin roles.
