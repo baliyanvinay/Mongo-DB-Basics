@@ -48,3 +48,11 @@ Events captured by profiler:
 db.getProfilingLevel()
 db.setProfilingLevel(1)
 # {"was": 0, "slowms": 100, "sampleRate": 1, "ok": 1}
+```
+  
+## Basic Security
+<b>Authentication Mechanisms</b>
+- SCRAM (Default)
+- X.509 (Community Version)
+- LDAP(Lightweight Directory Access Protocol) (Enterprise only)
+- KERBEROS (Enterprise only)
