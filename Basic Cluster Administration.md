@@ -29,3 +29,22 @@ Ref: [Mapping between mongod command line option and configuration file](https:/
 - mongod --auth # to enable authentication
 - mongod --bind_ip 123.123.123.123 # allow clients on IP address 123.123.123.123 to access database
 - mongod --bind_ip localhost,123.123.123.123 # for multiple clients
+
+## Profiling the database
+#### db.<database_method>() # database methods
+- db.createUser()
+- db.dropUser()
+- db.renameCollection()
+- db.collection.drop()
+#### rs.<replica_method>() # replica set methods
+#### sh.<sharded_cluster_method>() # sharded cluster methods
+
+### MongoDB profiler
+Events captured by profiler:
+- CRUD Operations
+- Administrative operations
+- Config operations
+```json
+db.getProfilingLevel()
+db.setProfilingLevel(1)
+# {"was": 0, "slowms": 100, "sampleRate": 1, "ok": 1}
