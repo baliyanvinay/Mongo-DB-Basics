@@ -188,6 +188,8 @@ db.collection.find({"birth year": {"$ne": ""}}, {"birth year": 1, "_id": 0}).sor
 ```
 ```
 # Importing into a db from json
-mongoimport --port 27000 --db applicationData --collection products --authenticationDatabase admin --username application-user --password application-pass --drop --file /dataset/products.json
+mongoimport --port 27000 --db applicationData --collection products ^ 
+--authenticationDatabase admin --username application-user --password application-pass ^
+--drop --file /dataset/products.json
 ```
 MongoDB Playground: https://mongoplayground.net/
