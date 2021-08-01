@@ -59,3 +59,13 @@ db.setProfilingLevel(1)
 
 <b>Authorization Mechanisms</b>
 - Role Based Access Control, role based based access
+```json
+# create root super user in admin db for authentication and authorization using SCRAM
+use admin
+db.createUser({
+  user: "root",
+  pwd: "root123",
+  roles : [ "root" ]
+})
+
+```
