@@ -106,3 +106,15 @@ Note: All roles applied on database level
 - listCollections
   
 <b>dbOwner</b>:- The database owner can perform any administrative action on the database. This role combines the privileges granted by the readWrite, dbAdmin and userAdmin roles.
+```
+# Connect to mongod deployment on port 27000
+mongo admin -u admin -p password --port 27000
+use admin
+# create new application user on applicationData DB with readWrite role
+db.createUser(
+  { user: "application-user",
+    pwd: "application-pass",
+    roles: [ { db: "applicationData", role: "readWrite" } ]
+  }
+)
+```
