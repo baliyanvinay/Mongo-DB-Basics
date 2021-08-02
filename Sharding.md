@@ -12,3 +12,8 @@ Each shard is deployed as replica set in order to grauntee high availablity. Thi
 - Horizontal scaling also provide parallel performance simultaneously for smooth operations.
 - Increasing the size of your disks most likely will imply eventual increasing the size of your RAM, which brings added costs or other bottlenecks to your system.<br>In such a scenario sharding, the parallelization of your workload across shards, might be way more beneficial for your application and budget than the waterfall of potential expensive upgrades.<br>
 - A general rule of thumb indicates that individual servers should contain 2-5TB of data.
+
+## What is mongoS?
+
+## Sharding Architecture
+![Sharding Architecture](https://docs.mongodb.com/manual/images/sharded-cluster-production-architecture.bakedsvg.svg)
