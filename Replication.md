@@ -22,3 +22,25 @@ To create 3 node replica set, below steps could be followed:-
 7. utilize the newly created admin user to enter primary db again ``` mongo admin -u admin -p password --port 270001 ```
 8. add other nodes using ``` rs.add({ host: "<host_ip: port>" }) ``` as SECONDARY nodes
 9. check status of replica set and quit ``` rs.status ```
+
+## Replication Configuration
+- JSON object that defines the configuration options of our replica set
+- can be configured manually from the shell
+- there are set of mongo shell replication helper methods that make it easier to manage
+```json
+{
+	"_id": "replica_set_name",
+	"version": 12,
+	"members": [
+		{
+			"_id": "0812301",
+			"host": "127.0.0.1:270001",
+			"arbiteronly": false,
+			"hidden": false, 
+			"priority": 1, 
+			"slaveDelay": 3000, 
+		},
+	],
+}
+```
+Note: priority must be 0 when hidden is true |  1000<=priority>=0 | 0 means node can't be primary ever
