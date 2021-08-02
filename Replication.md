@@ -44,3 +44,9 @@ To create 3 node replica set, below steps could be followed:-
 }
 ```
 Note: priority must be 0 when hidden is true |  1000<=priority>=0 | 0 means node can't be primary ever
+
+## Replica Set Commands
+- Replica status ```rs.status() ```
+- Role of a node ``` rs.isMaster() ```
+- Info about mongo server ``` db.serverStatus()['repl'] ```
+- Operation log ``` rs.printReplicationInfo() ```
