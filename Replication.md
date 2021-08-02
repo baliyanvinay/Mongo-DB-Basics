@@ -50,3 +50,8 @@ Note: priority must be 0 when hidden is true |  1000<=priority>=0 | 0 means node
 - Role of a node ``` rs.isMaster() ```
 - Info about mongo server ``` db.serverStatus()['repl'] ```
 - Operation log ``` rs.printReplicationInfo() ```
+
+```
+# Connecting to a replica set
+mongo --host replica_Set_name/localhost:27001 -u admin -p pass
+```
