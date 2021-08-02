@@ -55,3 +55,15 @@ Note: priority must be 0 when hidden is true |  1000<=priority>=0 | 0 means node
 # Connecting to a replica set
 mongo --host replica_Set_name/localhost:27001 -u admin -p pass
 ```
+## Read Concern Level
+- local : most recent data on primary node
+- available(shared clusters) : read on secondary nodes
+- majority
+- linearizable
+
+## Read Preference Modes
+- primary (default) 
+- primaryPreferred : first primary then available secondary
+- secondary
+- secondaryPreferred : first secondary nodes then to primary
+- nearest : least latency nodes
