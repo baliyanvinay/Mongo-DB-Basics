@@ -14,6 +14,9 @@ Each shard is deployed as replica set in order to grauntee high availablity. Thi
 - A general rule of thumb indicates that individual servers should contain 2-5TB of data.
 
 ## What is mongoS?
+The mongos tracks what data is on which shard by caching the metadata from the config servers. The mongos uses the metadata to route operations from applications and clients to the mongod instances. <br>
+A mongos has no persistent state and consumes minimal system resources.Applications never connect or communicate directly with the shards.<br>
+The mongos merges the data from each of the targeted shards and returns the result document. Certain query modifiers, such as sorting, are performed on each shard before mongos retrieves the results.
 
 ## Sharding Architecture
 ![Sharding Architecture](https://docs.mongodb.com/manual/images/sharded-cluster-production-architecture.bakedsvg.svg)
