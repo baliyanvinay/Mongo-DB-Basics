@@ -26,3 +26,9 @@ The mongos merges the data from each of the targeted shards and returns the resu
 sh.addShard("shard1/localhost:27001")
 sh.status()
 ```
+## Shard a collection
+1. Enter mongos with admin credentials
+2. Analyze your collection ``` db.my_collection.findOne() ```
+3. Create index for your shard keys ``` db.products.createIndex( { "sku": 1, "name": 1 } ) ```
+4. Enable sharding for your database ``` sh.enableSharding("my_fav_db") ```
+5. Shard collection on indexed keys ``` sh.shardCollection("my_fav_db.products", { sku: 1, name: 1 } ) ```
