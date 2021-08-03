@@ -20,3 +20,9 @@ The mongos merges the data from each of the targeted shards and returns the resu
 
 ## Sharding Architecture
 ![Sharding Architecture](https://docs.mongodb.com/manual/images/sharded-cluster-production-architecture.bakedsvg.svg)
+
+```js
+/* How to add a shard to mongos? */
+sh.addShard("shard1/localhost:27001")
+sh.status()
+```
