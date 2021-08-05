@@ -74,3 +74,7 @@ pipeline = [
 ]
 movies.aggregate(pipeline)
 ```
+## Pagination using limit and skip
+```python
+db.movies.find().sort("year", ASCENDING).skip(page*20).limit(20)
+```
